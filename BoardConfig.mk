@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-PRODUCT_DIR := kvim3l
+PRODUCT_DIR := vontarx3
 
 ifneq ($(ANDROID_BUILD_TYPE), 64)
 TARGET_CPU_ABI := armeabi-v7a
@@ -47,8 +47,8 @@ TARGET_NO_KERNEL := false
 TARGET_NO_RADIOIMAGE := true
 
 TARGET_BOARD_PLATFORM := u202
-TARGET_BOOTLOADER_BOARD_NAME := kvim3l
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/khadas/kvim3l/btbuild
+TARGET_BOOTLOADER_BOARD_NAME := vontarx3
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/khadas/vontarx3/btbuild
 # Allow passing `--second` to mkbootimg via 2ndbootloader.
 TARGET_BOOTLOADER_IS_2ND := true
 

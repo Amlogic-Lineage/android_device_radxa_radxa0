@@ -17,7 +17,7 @@
 # build for Meson reference board.
 #
 
-PRODUCT_DIR := kvim3l
+PRODUCT_DIR := vontarx3
 
 # Dynamic enable start/stop zygote_secondary in 64bits
 # and 32bit system, default closed
@@ -93,11 +93,11 @@ PRODUCT_COPY_FILES += \
         device/khadas/common/cmdclient:$(TARGET_COPY_OUT_SYSTEM)/bin/cmdclient \
         device/khadas/common/cmdserver:$(TARGET_COPY_OUT_SYSTEM)/bin/cmdserver
 
-PRODUCT_NAME := kvim3l
-PRODUCT_DEVICE := kvim3l
-PRODUCT_BRAND := Khadas
-PRODUCT_MODEL := VIM3L
-PRODUCT_MANUFACTURER := Khadas
+PRODUCT_NAME := vontarx3
+PRODUCT_DEVICE := vontarx3
+PRODUCT_BRAND := DroidLogic
+PRODUCT_MODEL := Vontar X3
+PRODUCT_MANUFACTURER := DroidLogic
 
 TARGET_KERNEL_BUILT_FROM_SOURCE := true
 
@@ -183,12 +183,12 @@ endif
 #PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY := true
 #PRODUCT_AML_SECURE_BOOT_VERSION3 := true
 ifeq ($(PRODUCT_AML_SECURE_BOOT_VERSION3),true)
-PRODUCT_AML_SECUREBOOT_RSAKEY_DIR := ./bootloader/uboot/board/khadas/kvim3l/aml-key
-PRODUCT_AML_SECUREBOOT_AESKEY_DIR := ./bootloader/uboot/board/khadas/kvim3l/aml-key
+PRODUCT_AML_SECUREBOOT_RSAKEY_DIR := ./bootloader/uboot/board/khadas/vontarx3/aml-key
+PRODUCT_AML_SECUREBOOT_AESKEY_DIR := ./bootloader/uboot/board/khadas/vontarx3/aml-key
 PRODUCT_SBV3_SIGBL_TOOL  := ./bootloader/uboot/fip/stool/amlogic-sign-g12a.sh -s g12a
 PRODUCT_SBV3_SIGIMG_TOOL := ./bootloader/uboot/fip/stool/signing-tool-g12a/sign-boot-g12a.sh --sign-kernel -h 2
 else
-PRODUCT_AML_SECUREBOOT_USERKEY := ./bootloader/uboot/board/khadas/kvim3l/aml-user-key.sig
+PRODUCT_AML_SECUREBOOT_USERKEY := ./bootloader/uboot/board/khadas/vontarx3/aml-user-key.sig
 PRODUCT_AML_SECUREBOOT_SIGNTOOL := ./bootloader/uboot/fip/g12a/aml_encrypt_g12a
 PRODUCT_AML_SECUREBOOT_SIGNBOOTLOADER := $(PRODUCT_AML_SECUREBOOT_SIGNTOOL) --bootsig \
 						--amluserkey $(PRODUCT_AML_SECUREBOOT_USERKEY) \
