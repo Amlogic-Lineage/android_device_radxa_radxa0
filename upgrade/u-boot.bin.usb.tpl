@@ -1,1 +1,0 @@
-../../../../bootloader/uboot/build/u-boot.bin.usb.tpl
