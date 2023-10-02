@@ -454,7 +454,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #########################################################################
 ifeq ($(BUILD_WITH_AVB),true)
 PRODUCT_PACKAGES += \
-	bootctrl.amlogic \
+#	bootctrl.amlogic \
 	libavb_user
 endif
 
