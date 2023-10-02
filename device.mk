@@ -96,7 +96,7 @@ endif
 PRODUCT_AAPT_CONFIG := xlarge hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
-PRODUCT_CHARACTERISTICS := mbx,nosdcard
+#PRODUCT_CHARACTERISTICS := mbx,nosdcard
 
 ifneq ($(TARGET_BUILD_GOOGLE_ATV), true)
 DEVICE_PACKAGE_OVERLAYS := \
@@ -104,18 +104,18 @@ DEVICE_PACKAGE_OVERLAYS := \
 endif
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-PRODUCT_PACKAGES += \
-    dhcptool \
-    rild    \
-    TeleService
+#PRODUCT_PACKAGES += \
+#    dhcptool \
+#    rild    \
+#    TeleService
 
-PRODUCT_COPY_FILES += \
-    device/khadas/common/ril/libquectel-ril/chat:system/bin/chat \
-    device/khadas/common/ril/libquectel-ril/libquectel-ril.so:vendor/lib/libquectel-ril.so \
-    device/khadas/common/ril/libquectel-ril/ip-up:system/etc/ppp/ip-up \
-    device/khadas/common/ril/libquectel-ril/ip-down:system/etc/ppp/ip-down \
-    device/khadas/common/ril/apns-conf.xml:system/etc/apns-conf.xml \
-    device/khadas/common/ril/ql-ril.conf:system/etc/ql-ril.conf
+#PRODUCT_COPY_FILES += \
+#    device/khadas/common/ril/libquectel-ril/chat:system/bin/chat \
+#    device/khadas/common/ril/libquectel-ril/libquectel-ril.so:vendor/lib/libquectel-ril.so \
+#    device/khadas/common/ril/libquectel-ril/ip-up:system/etc/ppp/ip-up \
+#    device/khadas/common/ril/libquectel-ril/ip-down:system/etc/ppp/ip-down \
+#    device/khadas/common/ril/apns-conf.xml:system/etc/apns-conf.xml \
+#    device/khadas/common/ril/ql-ril.conf:system/etc/ql-ril.conf
 
 # Light HAL
 PRODUCT_PACKAGES += \

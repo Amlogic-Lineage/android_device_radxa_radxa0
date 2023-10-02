@@ -153,7 +153,7 @@ TARGET_NO_RECOVERY := false
 ifeq ($(ANDROID_BUILD_TYPE), 64)
 TARGET_PARTITION_DTSI := partition_mbox_normal_P_64.dtsi
 else
-TARGET_PARTITION_DTSI := partition_mbox_normal_P_32.dtsi
+TARGET_PARTITION_DTSI := partition_mbox_normal_P_64.dtsi
 endif
 
 ifneq ($(BUILD_WITH_AVB),true)
@@ -265,9 +265,9 @@ endif
 #
 #########################################################################
 
-WIFI_MODULE := multiwifi
-#WIFI_MODULE := BCMWIFI
-#WIFI_BUILD_IN := true
+#WIFI_MODULE := multiwifi
+WIFI_MODULE := BCMWIFI
+WIFI_BUILD_IN := true
 include hardware/amlogic/wifi/configs/wifi.mk
 
 #########################################################################
@@ -276,7 +276,7 @@ include hardware/amlogic/wifi/configs/wifi.mk
 #
 #########################################################################
 
-BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH := false
 BLUETOOTH_MODULE := BCMBT
 include hardware/amlogic/bluetooth/configs/bluetooth.mk
 
@@ -496,7 +496,7 @@ $(call inherit-product, device/khadas/common/tb_detect.mk)
 
 include device/khadas/common/gpu/dvalin-user-arm64.mk
 #####npu ovx service
-BOARD_NPU_SERVICE_ENABLE := true
+BOARD_NPU_SERVICE_ENABLE := false
 ifeq ($(BOARD_NPU_SERVICE_ENABLE), true)
 PRODUCT_CHIP_ID :=PID0x99
 PRODUCT_PACKAGES += android.hardware.neuralnetworks@1.1-service-ovx-driver
@@ -520,6 +520,13 @@ endif
 ifneq ($(TARGET_BUILD_LIVETV),true)
 TARGET_BUILD_LIVETV := false
 endif
+
+# OpenGapps - ATV target
+ifeq ($(TARGET_BUILD_GOOGLE_ATV), true)
+PRODUCT_PACKAGES += TvProvision
+include vendor/gapps/atv/atv-vendor.mk
+endif
+
 ifneq ($(TARGET_BUILD_GOOGLE_ATV),true)
 TARGET_BUILD_GOOGLE_ATV := false
 endif
