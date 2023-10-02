@@ -27,7 +27,7 @@ else
 -include hardware/amlogic/bluetooth/configs/bluetooth_modules.mk
 -include device/khadas/common/tb_modules.mk
 -include device/khadas/common/npu_modules.mk
-KERNEL_DEVICETREE := vontarx3
+KERNEL_DEVICETREE := g12a_s905y2_radxa0
 KERNEL_DEFCONFIG := meson64_defconfig
 KERNEL_ARCH := arm64
 

@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/vontarx3.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/radxa0.mk

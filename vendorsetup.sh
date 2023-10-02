@@ -1,3 +1,3 @@
-add_lunch_combo vontarx3-eng
-add_lunch_combo vontarx3-user
-add_lunch_combo vontarx3-userdebug
+add_lunch_combo radxa0-eng
+add_lunch_combo radxa0-user
+add_lunch_combo radxa0-userdebug

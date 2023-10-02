@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-PRODUCT_DIR := vontarx3
+PRODUCT_DIR := radxa0
 
 ifneq ($(ANDROID_BUILD_TYPE), 64)
 TARGET_CPU_ABI := armeabi-v7a
@@ -47,8 +47,8 @@ TARGET_NO_KERNEL := false
 TARGET_NO_RADIOIMAGE := true
 
 TARGET_BOARD_PLATFORM := u202
-TARGET_BOOTLOADER_BOARD_NAME := vontarx3
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/khadas/vontarx3/btbuild
+TARGET_BOOTLOADER_BOARD_NAME := radxa0
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/radxa/radxa0/btbuild
 # Allow passing `--second` to mkbootimg via 2ndbootloader.
 TARGET_BOOTLOADER_IS_2ND := true
 
@@ -132,12 +132,12 @@ endif
 endif
 
 TARGET_SUPPORT_USB_BURNING_V2 := true
-TARGET_AMLOGIC_RES_PACKAGE := device/khadas/$(PRODUCT_DIR)/logo_img_files
+TARGET_AMLOGIC_RES_PACKAGE := device/radxa/$(PRODUCT_DIR)/logo_img_files
 
 ifeq ($(BOARD_BUILD_SYSTEM_ROOT_IMAGE), true)
-TARGET_RECOVERY_FSTAB := device/khadas/$(PRODUCT_DIR)/recovery/recovery_system.fstab
+TARGET_RECOVERY_FSTAB := device/radxa/$(PRODUCT_DIR)/recovery/recovery_system.fstab
 else
-TARGET_RECOVERY_FSTAB := device/khadas/$(PRODUCT_DIR)/recovery/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/radxa/$(PRODUCT_DIR)/recovery/recovery.fstab
 endif
 
 #BOARD_HAL_STATIC_LIBRARIES := libhealthd.mboxdefault

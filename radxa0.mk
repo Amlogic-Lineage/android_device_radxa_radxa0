@@ -17,7 +17,7 @@
 # build for Meson reference board.
 #
 
-PRODUCT_DIR := vontarx3
+PRODUCT_DIR := radxa0
 
 # Dynamic enable start/stop zygote_secondary in 64bits
 # and 32bit system, default closed
@@ -32,9 +32,9 @@ $(call inherit-product, build/target/product/core_64_bit.mk)
 endif
 endif
 
-$(call inherit-product, device/khadas/$(PRODUCT_DIR)/vendor_prop.mk)
+$(call inherit-product, device/radxa/$(PRODUCT_DIR)/vendor_prop.mk)
 $(call inherit-product, device/khadas/common/products/mbox/product_mbox.mk)
-$(call inherit-product, device/khadas/$(PRODUCT_DIR)/device.mk)
+$(call inherit-product, device/radxa/$(PRODUCT_DIR)/device.mk)
 $(call inherit-product-if-exists, vendor/google/products/gms.mk)
 #########################################################################
 #
@@ -93,11 +93,11 @@ PRODUCT_COPY_FILES += \
         device/khadas/common/cmdclient:$(TARGET_COPY_OUT_SYSTEM)/bin/cmdclient \
         device/khadas/common/cmdserver:$(TARGET_COPY_OUT_SYSTEM)/bin/cmdserver
 
-PRODUCT_NAME := vontarx3
-PRODUCT_DEVICE := vontarx3
-PRODUCT_BRAND := DroidLogic
-PRODUCT_MODEL := Vontar X3
-PRODUCT_MANUFACTURER := DroidLogic
+PRODUCT_NAME := radxa0
+PRODUCT_DEVICE := radxa0
+PRODUCT_BRAND := Radxa
+PRODUCT_MODEL := Radxa Zero
+PRODUCT_MANUFACTURER := radxa
 
 TARGET_KERNEL_BUILT_FROM_SOURCE := true
 
@@ -183,12 +183,12 @@ endif
 #PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY := true
 #PRODUCT_AML_SECURE_BOOT_VERSION3 := true
 ifeq ($(PRODUCT_AML_SECURE_BOOT_VERSION3),true)
-PRODUCT_AML_SECUREBOOT_RSAKEY_DIR := ./bootloader/uboot/board/khadas/vontarx3/aml-key
-PRODUCT_AML_SECUREBOOT_AESKEY_DIR := ./bootloader/uboot/board/khadas/vontarx3/aml-key
+PRODUCT_AML_SECUREBOOT_RSAKEY_DIR := ./bootloader/uboot/board/khadas/radxa0/aml-key
+PRODUCT_AML_SECUREBOOT_AESKEY_DIR := ./bootloader/uboot/board/khadas/radxa0/aml-key
 PRODUCT_SBV3_SIGBL_TOOL  := ./bootloader/uboot/fip/stool/amlogic-sign-g12a.sh -s g12a
 PRODUCT_SBV3_SIGIMG_TOOL := ./bootloader/uboot/fip/stool/signing-tool-g12a/sign-boot-g12a.sh --sign-kernel -h 2
 else
-PRODUCT_AML_SECUREBOOT_USERKEY := ./bootloader/uboot/board/khadas/vontarx3/aml-user-key.sig
+PRODUCT_AML_SECUREBOOT_USERKEY := ./bootloader/uboot/board/khadas/radxa0/aml-user-key.sig
 PRODUCT_AML_SECUREBOOT_SIGNTOOL := ./bootloader/uboot/fip/g12a/aml_encrypt_g12a
 PRODUCT_AML_SECUREBOOT_SIGNBOOTLOADER := $(PRODUCT_AML_SECUREBOOT_SIGNTOOL) --bootsig \
 						--amluserkey $(PRODUCT_AML_SECUREBOOT_USERKEY) \
@@ -253,10 +253,10 @@ endif
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
-    device/khadas/$(PRODUCT_DIR)/fstab.ab.amlogic:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.amlogic
+    device/radxa/$(PRODUCT_DIR)/fstab.ab.amlogic:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.amlogic
 else
 PRODUCT_COPY_FILES += \
-    device/khadas/$(PRODUCT_DIR)/fstab.system.amlogic:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.amlogic
+    device/radxa/$(PRODUCT_DIR)/fstab.system.amlogic:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.amlogic
 endif
 
 #########################################################################
